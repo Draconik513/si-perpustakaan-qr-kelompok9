@@ -1,102 +1,58 @@
-# BukuHub - Sistem Perpustakaan QR Code
+# Sistem Informasi Perpustakaan QR Code - Kelompok 9
 
-[![Continuous Integration](https://github.com/ikhsan3adi/sistem-perpustakaan-qr-code/actions/workflows/ci.yml/badge.svg)](https://github.com/ikhsan3adi/sistem-perpustakaan-qr-code/actions/workflows/ci.yml)
+## Identitas Kelompok
 
-![Preview](https://github.com/ikhsan3adi/sistem-perpustakaan-qr-code/raw/main/screenshots/home.png)
+- Nama Kelompok: Kelompok 9
+- Anggota:
+  - Abubakar Shiddiq (F55124036)
+  - Fiqhy Fauzan (F55124029)
+  - Gina Masita (F55124032)
 
-> [!NOTE]
->
-> ## Fitur
->
-> - Login, Register & Magic login link (via Email)
-> - Dashboard admin
-> - QR Code anggota
-> - QR Code peminjaman
-> - Sistem denda
-> - Dan lainnya.
->
-> ## Framework dan Library Yang Digunakan
->
-> - [CodeIgniter 4](https://codeigniter.com/)
-> - [CodeIgniter Shield](https://codeigniter4.github.io/shield/)
-> - [Bootstrap 5](https://getbootstrap.com/)
-> - [Modernize Free Bootstrap 5 Admin Template](https://adminmart.com/product/modernize-free-bootstrap-5-admin-template/)
-> - [Tabler Icons](https://tabler-icons.io/)
-> - [Apex Charts](https://apexcharts.com/)
-> - [Endroid QR Code Generator](https://github.com/endroid/qr-code)
-> - [Mebjas Html5-QRCode Scanner](https://github.com/mebjas/html5-qrcode)
+## Deskripsi Singkat
 
-## Cara Penggunaan
+Sistem Informasi Perpustakaan berbasis CodeIgniter 4 dengan fitur utama:
 
-### Persyaratan
+- QR Code untuk anggota dan peminjaman
+- Sistem denda otomatis
+- Manajemen buku, anggota, peminjaman, pengembalian
+- Dashboard admin
 
-- [Composer](https://getcomposer.org/).
-- PHP 8.1+ dan MySQL atau [XAMPP](https://www.apachefriends.org/download.html) versi 8.1+ dengan mengaktifkan extension `-intl` dan `-gd`.
-- (Opsional) Kamera/webcam untuk menjalankan qr scanner. Bisa juga menggunakan kamera HP dengan bantuan software DroidCam.
+## Fitur
 
-### Instalasi
+- Login & Register
+- QR Code generation & scanner
+- CRUD Buku dan Anggota
+- Peminjaman & Pengembalian
+- Penghitungan denda
 
-- Unduh dan impor kode proyek ini ke dalam direktori proyek anda (htdocs).
-- Penting ⚠️. Jika belum memiliki file `.env`, salin/rename file `.env.example` menjadi `.env`
-- (Opsional) Konfigurasi file `.env` untuk mengatur parameter seperti koneksi database dan pengaturan lainnya sesuai dengan lingkungan pengembangan Anda.
-- Penting ⚠️. Install dependencies yang diperlukan dengan cara menjalankan perintah berikut di terminal:
+## Prasyarat
 
-```shell
-composer install
-```
+- PHP 8.1+, Composer, MySQL, ekstensi PHP: intl, gd
 
-- Buat database `db_book_library` di phpMyAdmin / mysql
-- Penting ⚠️. Jalankan migrasi database untuk membuat struktur tabel yang diperlukan. Ketikkan perintah berikut di terminal:
+## Cara Instal (Singkat)
 
-```shell
-php spark migrate --all
-```
+1. Clone repository: `git clone https://github.com/Draconik513/si-perpustakaan-qr-kelompok9.git`
+2. Masuk ke folder project: `cd sistem-perpustakaan-qr-code`
+3. Install dependencies: `composer install`
+4. Salin file environment: `cp .env.example .env` -> sesuaikan DB
+5. Buat database baru: `db_book_library`
+6. Jalankan migrasi tabel: `php spark migrate --all`
+7. Buat akun SuperAdmin: `php spark db:seed SuperAdminSeeder`
+8. Jalankan aplikasi: `php spark serve` 
 
-- Penting ⚠️. Karena belum memiliki akun admin, untuk mengakses halaman admin, anda memerlukan user/akun dengan level `superadmin`. Jalankan perintah berikut untuk membuat akun `superadmin`:
+Buka di browser:  
+**http://localhost:8080**
 
-```shell
-php spark db:seed SuperAdminSeeder
-```
 
-> [!TIP]
->
-> - (Opsional) Isi database dengan data dummy / seeder.
->
-> ```shell
-> php spark db:seed Seeder # semua seeder
-> php spark db:seed BookSeeder # buku
-> php spark db:seed MemberSeeder # anggota
-> php spark db:seed LoanSeeder # peminjaman, pengembalian & denda
-> ```
+## Akun Demo
 
-- Jalankan website
+- admin: superadmin@admin.com / superadmin
 
-```shell
-php spark serve
-```
+## Cara Push ke GitHub
+git add .
+git commit -m "Add Sistem Informasi Perpustakaan QR Code"
+git push -u origin main
 
-- Buka [http://localhost:8080](http://localhost:8080)
-- Login dengan kredensial `superadmin` berikut:
-
-```txt
-username : superadmin
-email    : superadmin@admin.com
-password : superadmin
-```
-
-## Contributing
-
-Kami menerima kontribusi dari komunitas terbuka untuk meningkatkan aplikasi ini. Jika Anda menemukan masalah, bug, atau memiliki saran untuk peningkatan, silakan buat issue baru dalam repositori ini atau ajukan pull request.
-
-## Donasi
-
-[![Donate paypal](https://img.shields.io/badge/Donate-PayPal-green.svg?style=for-the-badge)](https://paypal.me/xannxett?country.x=ID&locale.x=en_US)
-[![Donate saweria](https://img.shields.io/badge/Donate-Saweria-red?style=for-the-badge&link=https%3A%2F%2Fsaweria.co%2Fxiboxann)](https://saweria.co/xiboxann)
-
-## Lisensi
-
-[![GitHub license](https://img.shields.io/github/license/ikhsan3adi/sistem-perpustakaan-qr-code?style=for-the-badge)](https://github.com/ikhsan3adi/sistem-perpustakaan-qr-code/raw/main/LICENSE)
-
-## Authors
-
-- [@ikhsan3adi](https://www.github.com/ikhsan3adi)
+## Catatan
+- Jangan commit file `.env`
+- Jika ingin menggunakan data dummy, jalankan:
