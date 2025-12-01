@@ -55,4 +55,5 @@ git push -u origin main
 
 ## Catatan
 - Jangan commit file `.env`
-- Jika ingin menggunakan data dummy, jalankan:
+- Jika ingin menggunakan data dummy, jalankan: php spark db:seed Seeder
+
